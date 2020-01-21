@@ -9,7 +9,7 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item href="/populares">Populares</b-nav-item>
+            <b-nav-item href="/">Populares</b-nav-item>
             
           </b-navbar-nav>
 
@@ -28,9 +28,6 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-    </div>
-    <div id="nav">
-      <router-link to="/">Populares</router-link>
     </div>
     <router-view/>
   </div>
