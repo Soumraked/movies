@@ -6,6 +6,7 @@
         <b-card-text>
           <h1>{{movies[index].title}}</h1>
           <!-- <p>{{movies[index].overview}}</p> -->
+          <genres v-bind:genres="movies[index].geners" />
           <p> {{movies[index].geners}} </p>
           <p> {{movies[index].date}} </p>
           <p> {{movies[index].vote_average}} </p>
@@ -18,7 +19,11 @@
 
 <script>
 import axios from "axios"; 
+import genres from "@/components/chips.vue"
+
 export default {
+  name: 'genres_list',
+  components: {genres},
   data() {
     return {
       api_key: '60072f969fb698b98e7b36e86b4fcf58',
