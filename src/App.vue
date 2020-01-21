@@ -30,7 +30,7 @@
       </b-navbar>
     </div>
     <div id="nav">
-      <router-link to="/populares">Populares</router-link>
+      <router-link to="/">Populares</router-link>
     </div>
     <router-view/>
   </div>

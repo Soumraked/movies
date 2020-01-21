@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/populares',
+    path: '/',
     name: 'populares',
     component: () => import('../views/Populares.vue')
   }
