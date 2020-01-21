@@ -10,7 +10,6 @@
           <p> {{movies[index].date}} </p>
           <p> {{movies[index].vote_average}} </p>
           <p> {{movies[index].vote_count}} </p>
-          <p> {{movies[index].vote_count}} </p>
         </b-card-text>
       </b-card>
     </div>
