@@ -2,15 +2,18 @@
   <div class="container">
     <h1>Películas populares</h1>
     <div v-for="(n,index) in movies" :key="index">
-      <b-card :img-src="movies[index].poster" img-alt="Card image" img-left class="mb-3" img-width="250">
+      <b-card :img-src="movies[index].poster" img-alt="Card image" img-left class="mb-3" img-width="150">
         <b-card-text>
-          <h1>{{movies[index].title}}</h1>
+          <h2>{{movies[index].title}} ({{movies[index].date.slice(0,4)}})</h2><hr>
+          
           <!-- <p>{{movies[index].overview}}</p> -->
-          <genres v-bind:genres="movies[index].geners" />
-          <p> {{movies[index].geners}} </p>
-          <p> {{movies[index].date}} </p>
-          <p> {{movies[index].vote_average}} </p>
-          <p> {{movies[index].vote_count}} </p>
+          <genres v-bind:genres="movies[index].geners" /> <hr>  
+          <h3><b-icon icon="star-fill" variant="warning">
+             </b-icon>{{" " + movies[index].vote_average}}<h6>Votos: {{movies[index].vote_count}}</h6>
+          </h3>
+          
+
+          <p>  </p>
         </b-card-text>
       </b-card>
     </div>
