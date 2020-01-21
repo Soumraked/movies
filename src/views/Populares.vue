@@ -38,13 +38,11 @@ export default {
         generos[genres.data.genres[i].id] = genres.data.genres[i].name;
       }
       this.genres = generos;
-      //console.log(this.genres)
 
       let movie = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=60072f969fb698b98e7b36e86b4fcf58&language=es-MX&page=1');
-      //console.log(movie.data.results)
       var movies = [];
       var info = {};
-      var generosStr = '';
+      var generosList = [];
       for(var i in movie.data.results){
         info = {};
         info['title'] = movie.data.results[i].title;
@@ -54,14 +52,11 @@ export default {
         info['vote_average'] = movie.data.results[i].vote_average;
         info['vote_count'] = movie.data.results[i].vote_count;
         info['id'] = movie.data.results[i].id;
-        generosStr = '';
-        //console.log(movie.data.results[i].genre_ids)
+        generosList = [];
         for(var j in movie.data.results[i].genre_ids){
-          //console.log(movie.data.results[i].genre_ids[j])
-          generosStr += this.genres[movie.data.results[i].genre_ids[j]] + '/';
+          generosList.push(this.genres[movie.data.results[i].genre_ids[j]]);
         }
-        //console.log(generosStr)
-        info['geners'] = generosStr;
+        info['geners'] = generosList;
         movies.push(info);
       }
       this.movies = movies;
