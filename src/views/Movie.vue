@@ -15,15 +15,16 @@
 
       <b-card>
         <b-card-text>
+          <h4>Detalles:</h4>
           <h6>Título original: {{movie.original_title}}</h6>
           <h6>Lenguaje original: {{movie.original_language}}</h6>
           <h6>Duración: {{movie.runtime}} minutos </h6>
           <h6>Fecha estreno: {{movie2.allDate}}</h6>
           <h6>Presupuesto (USD): $ {{movie2.budget}}</h6>
           <h6>Ingresos (USD): $ {{movie2.revenue}}</h6>
-          <hr><h4>Compañias productoras:</h4><hr>
+          <hr><h4>Compañias productoras:</h4>
           <genres v-bind:genres="p_companies" />
-          <hr><h4>Paises productoras:</h4><hr>
+          <hr><h4>Paises productoras:</h4>
           <genres v-bind:genres="p_countries" /> <hr>
         </b-card-text>
       </b-card>
