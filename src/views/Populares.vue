@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <br>
-    <h1>Películas populares</h1>
+    <h1>Top 20 de películas</h1>
     <br>
     
     <div v-for="(n,index) in movies" :key="index">
