@@ -16,8 +16,11 @@
 
           <b-navbar-nav class="ml-auto">
             <b-nav-form>
-              <b-form-input size="sm" class="mr-sm-2" v-model="busqueda" v-on:change="buscar" placeholder="Buscar"></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" variant="dark"><b-icon icon="search" v-on:click="buscar"></b-icon></b-button>
+                  <b-form-input size="sm" v-model="busqueda" type="text" placeholder="Buscar" v-on:change="buscar()" debounce="5" ></b-form-input>
+                  <b-input-group-append>
+                      <b-button size="sm" v-on:click="buscar()" variant="dark"><b-icon icon="search"></b-icon></b-button>
+                  </b-input-group-append>
+              <b-form-input style="display:none;"></b-form-input>
             </b-nav-form>
           </b-navbar-nav>
 

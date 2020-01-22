@@ -25,7 +25,7 @@
           <h6>Ingresos (USD): $ {{movie2.revenue}}</h6>
           <hr><h4>Compañias productoras:</h4>
           <genres v-bind:genres="p_companies" />
-          <hr><h4>Paises productoras:</h4>
+          <hr><h4>Países productores:</h4>
           <genres v-bind:genres="p_countries" /> <hr>
         </b-card-text>
       </b-card>
