@@ -13,6 +13,11 @@ const routes = [
     path: '/:id',
     name: 'movie-info',
     component: () => import('../views/Movie.vue')
+  },
+  {
+    path: '/search/:search',
+    name: 'busqueda',
+    component: () => import('../views/Busqueda.vue')
   }
 ]
 
