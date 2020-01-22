@@ -17,9 +17,9 @@
         <h6>Título original: {{movie.original_title}}</h6>
         <h6>Lenguaje original: {{movie.original_language}}</h6>
         <h6>Duración: {{movie.runtime}} minutos </h6>
-        <h6>Fecha estreno: {{movie.release_date}}</h6>
-        <h6>Presupuesto (USD): $ {{movie.budget}}</h6>
-        <h6>Ingresos (USD): $ {{movie.revenue}}</h6>
+        <h6>Fecha estreno: {{movie2.allDate}}</h6>
+        <h6>Presupuesto (USD): $ {{movie2.budget}}</h6>
+        <h6>Ingresos (USD): $ {{movie2.revenue}}</h6>
         <hr><h4>Compañias productoras:</h4><hr>
         <genres v-bind:genres="p_companies" />
         <hr><h4>Paises productoras:</h4><hr>
@@ -53,10 +53,11 @@ export default {
   methods:{
     async datosPelicula(){
       let movie = await axios.get('https://api.themoviedb.org/3/movie/'+this.id+'?api_key='+this.api_key+'&language=es-MX');
-      console.log(movie.data);
+      //console.log(movie.data);
       this.movie = movie.data;
       this.movie2['poster'] = this.base_img + movie.data.poster_path;
       this.movie2['date'] = movie.data.release_date.slice(0,4);
+      this.movie2['allDate'] = movie.data.release_date.slice(8)+'-'+movie.data.release_date.slice(5,7)+'-'+movie.data.release_date.slice(0,4);
       for(var i in movie.data.genres){
         this.genres.push(movie.data.genres[i].name)
       }
@@ -66,6 +67,8 @@ export default {
       for(var i in movie.data.production_countries){
         this.p_countries.push(movie.data.production_countries[i].name)
       }
+      this.movie2['budget'] = movie.data.budget.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
+      this.movie2['revenue'] = movie.data.revenue.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",")
     }
   }
 }
