@@ -30,6 +30,26 @@
       </b-navbar>
     </div>
     <router-view/>
+
+
+
+      <!-- Footer -->
+<footer class="page-footer font-small bg-info pt-4">
+  <div class="container container-fluid text-center text-white">
+
+        <h5 class="text-uppercase">mejorespelis</h5>
+        <p>Un sitio en donde puedes encontrar una lista de las películas más populares del momento.</p>
+      <hr />
+
+  </div>
+
+  <div class="footer-copyright text-center text-white-50 py-3 bg-gradient-info">© 2020 Copyright:
+    <a class="text-white"> MejoresPelis</a>
+  </div>
+
+</footer>
+<!-- Footer -->
+
   </div>
 </template>
 
@@ -54,6 +74,15 @@ export default {
 </script>
 
 <style>
+
+.containerfooter {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
