@@ -18,7 +18,7 @@
         <b-card-text>
           <h4>Detalles:</h4>
           <h6>Título original: {{movie.original_title}}</h6>
-          <h6>Lenguaje original: {{movie.original_language}}</h6>
+          <h6>Lenguaje original: {{movie2.lang}}</h6>
           <h6>Duración: {{movie.runtime}} minutos </h6>
           <h6>Fecha estreno: {{movie2.allDate}}</h6>
           <h6>Presupuesto (USD): $ {{movie2.budget}}</h6>
@@ -60,6 +60,7 @@ export default {
   },
   methods:{
     async datosPelicula(){
+      let lang = await axios.get('https://api.themoviedb.org/3/configuration/languages?api_key='+this.api_key)
       let movie = await axios.get('https://api.themoviedb.org/3/movie/'+this.id+'?api_key='+this.api_key+'&language=es-MX');
       this.mostrar = true;
       //console.log(movie.data);
@@ -78,6 +79,12 @@ export default {
       }
       this.movie2['budget'] = movie.data.budget.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",");
       this.movie2['revenue'] = movie.data.revenue.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d)\.?)/g, ",")
+      for(var i in lang.data){
+        if(lang.data[i].iso_639_1 == movie.data.original_language){
+          this.movie2['lang'] = lang.data[i].english_name;
+          break;
+        }
+      }
     }
   }
 }
