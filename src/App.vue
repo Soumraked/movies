@@ -5,13 +5,14 @@
       <b-navbar toggleable="lg" type="dark" variant="info">
         
         <img class="mr-4" src="./assets/image.png" width="50px" id="img_logomaster">
+        <b-navbar-brand>MejoresMovies</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
 
           <b-navbar-nav>
-            <b-nav-item active v-if="this.$route.name == 'populares'"  href="/">Peliculas Populares</b-nav-item>
-            <b-nav-item v-if="this.$route.name != 'populares'" href="/">Peliculas Populares</b-nav-item>
+            <b-nav-item active v-if="this.$route.name == 'populares'"  href="/">Populares</b-nav-item>
+            <b-nav-item v-if="this.$route.name != 'populares'" href="/">Populares</b-nav-item>
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto">
