@@ -1,6 +1,8 @@
 <template>
   <div class="container">
+    <br>
     <h1>Películas populares</h1>
+    <br>
     <div v-for="(n,index) in movies" :key="index">
       <b-card :img-src="movies[index].poster" img-alt="Card image" img-left class="mb-3" style="cursor:pointer;" img-width="150" v-on:click="movie(movies[index].id)">
         <b-card-text>
