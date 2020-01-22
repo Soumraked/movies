@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
-        <img class="mr-4" src="./assets/image.png" width="80px" id="img_logomaster">
+        <img class="mr-4" src="./assets/image.png" width="75px" id="img_logomaster">
         <!--<b-navbar-brand href="#" class="" >Peliculas</b-navbar-brand>-->
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
