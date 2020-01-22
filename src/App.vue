@@ -41,7 +41,12 @@ export default {
   },
   methods:{
     buscar(){
-      this.$router.push(`/search/${this.busqueda}`);
+      if (this.$route.name == 'busqueda') {
+        this.$router.push(`/search/${this.busqueda}`); 
+        location.reload();
+      } else {
+        this.$router.push(`/search/${this.busqueda}`);
+      }
     }
   }
 }
