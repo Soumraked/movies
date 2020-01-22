@@ -3,32 +3,20 @@
     <br>
     <h1>Películas populares</h1>
     <br>
+    
     <div v-for="(n,index) in movies" :key="index">
-      <b-card :img-src="movies[index].poster" img-alt="Card image" img-left class="mb-3" style="cursor:pointer;" img-width="150" v-on:click="movie(movies[index].id)">
-        <b-card-text>
-          <h2>{{movies[index].title}} ({{movies[index].date.slice(0,4)}})</h2><hr>
-          
-          <!-- <p>{{movies[index].overview}}</p> -->
-          <genres v-bind:genres="movies[index].geners" /> <hr>  
-          <h3><b-icon icon="star-fill" variant="warning">
-             </b-icon>{{" " + movies[index].vote_average}}<h6>Votos: {{movies[index].vote_count}}</h6>
-          </h3>
-          
-
-          <p>  </p>
-        </b-card-text>
-      </b-card>
+      <Card v-bind:data_card="movies[index]"/>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios"; 
-import genres from "@/components/chips.vue"
+import Card from "@/components/card.vue"
 
 export default {
   name: 'genres_list',
-  components: {genres},
+  components: {Card},
   data() {
     return {
       api_key: '60072f969fb698b98e7b36e86b4fcf58',
@@ -72,9 +60,6 @@ export default {
       this.movies = movies;
       
     },
-    movie(id){
-      this.$router.push(`/${id}`);
-    }
   }
 }
 </script>
