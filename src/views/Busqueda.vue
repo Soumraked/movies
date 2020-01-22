@@ -3,9 +3,13 @@
 
     <br><h1>Resultados de la búsqueda</h1><br>
 
-    <div v-for="(n,index) in moviesSearch" :key="index">
-      <Card v-bind:data_card="moviesSearch[index]"/>
-
+    <div v-if="this.moviesSearch.length != 0">
+      <div v-for="(n,index) in moviesSearch" :key="index">
+        <Card v-bind:data_card="moviesSearch[index]"/>
+      </div>
+    </div>
+    <div v-else>
+      <b-alert show variant="info">No existe resultado para la búsqueda.</b-alert>
     </div>
 
   </div>
