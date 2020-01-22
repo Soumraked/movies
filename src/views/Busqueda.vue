@@ -1,22 +1,11 @@
 <template>
   <div class="container">
 
-    <br><h1>Búsqueda</h1><br>
+    <br><h1>Resultados de la búsqueda</h1><br>
 
     <div v-for="(n,index) in moviesSearch" :key="index">
-      <b-card :img-src="moviesSearch[index].poster" img-alt="Card image" img-left class="mb-3" style="cursor:pointer;" img-width="150" v-on:click="movie(moviesSearch[index].id)">
-        
-        <b-card-text>
+      <Card v-bind:data_card="moviesSearch[index]"/>
 
-          <h2>{{moviesSearch[index].title}} ({{moviesSearch[index].date.slice(0,4)}})</h2><hr>
-          <genres v-bind:genres="moviesSearch[index].geners" /><hr>
-          <h3><b-icon icon="star-fill" variant="warning">
-             </b-icon>{{" " + moviesSearch[index].vote_average}}<h6>Votos: {{moviesSearch[index].vote_count}}</h6>
-          </h3>
-          
-        </b-card-text>
-
-      </b-card>
     </div>
 
   </div>
@@ -25,10 +14,11 @@
 <script>
 import axios from "axios"; 
 import genres from "@/components/chips.vue"
+import Card from "@/components/card.vue"
 
 export default {
   name: 'genres_list',
-  components: {genres},
+  components: {Card},
   data(){
     return{
       api_key: '60072f969fb698b98e7b36e86b4fcf58',
@@ -72,9 +62,6 @@ export default {
       }
       this.moviesSearch = movies;
     },
-    movie(id){
-      this.$router.push(`/${id}`);
-    }
   }
 }
 </script>
