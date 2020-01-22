@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br>
     <div v-if="mostrar">
       <b-card :img-src="movie2.poster" img-alt="Card image" img-left class="mb-3" img-height="400">
         <b-card-text>
@@ -30,7 +31,7 @@
       </b-card>
     </div>
     <div v-if="!mostrar">
-      <h1>No existe el sitio al cual quiere acceder.</h1>
+       <b-alert show variant="info">No existe el sitio al cual quiere acceder.</b-alert>
     </div>
   </div>
 </template>
