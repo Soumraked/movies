@@ -3,6 +3,12 @@ node_modules
 #Cambios minimos
 /dist
 
+# avoid firebase 
+/.firebase 
+firebase.json
+.firebaserc
+
+
 # local env files
 .env.local
 .env.*.local
