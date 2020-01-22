@@ -16,7 +16,7 @@
 
           <b-navbar-nav class="ml-auto">
             <b-nav-form>
-                  <b-form-input size="sm" v-model="busqueda" type="text" placeholder="Buscar" v-on:change="buscar()" debounce="5" ></b-form-input>
+                  <b-form-input autocomplete="off" size="sm" v-model="busqueda" type="text" placeholder="Buscar" v-on:change="buscar()" debounce="5" ></b-form-input>
                   <b-input-group-append>
                       <b-button size="sm" v-on:click="buscar()" variant="dark"><b-icon icon="search"></b-icon></b-button>
                   </b-input-group-append>
