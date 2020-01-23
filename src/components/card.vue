@@ -43,12 +43,10 @@ export default {
   data(){
     return{
       movies: {},
-      title: '',
     }
   },
   created() {
     this.movies = this.data_card;
-    this.title = this.movies.title + ' (' + this.movies.date.slice(0,4) + ')';
   },
   methods: {
     movie(id){
