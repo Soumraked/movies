@@ -31,25 +31,21 @@
     </div>
     <router-view/>
 
-
-
       <!-- Footer -->
-<footer class="page-footer font-small bg-info pt-4">
-  <div class="container container-fluid text-center text-white">
+    <footer class="page-footer font-small bg-info pt-4">
+      <div class="container container-fluid text-center text-white">
 
-        <h5 class="text-uppercase">mejorespelis</h5>
-        <p>Un sitio en donde puedes encontrar una lista de las películas más populares del momento.</p>
-      <hr />
+            <h5 class="text-uppercase">mejorespelis</h5>
+            <p>Un sitio en donde puedes encontrar una lista de las películas más populares del momento.</p>
+          <hr />
 
-  </div>
+      </div>
 
-  <div class="footer-copyright text-center text-white-50 py-3 bg-gradient-info">© 2020 Copyright:
-    <a class="text-white"> MejoresPelis</a>
-  </div>
-
-</footer>
+      <div class="footer-copyright text-center text-white-50 py-3 bg-gradient-info">© 2020 Copyright:
+        <a class="text-white"> MejoresPelis</a>
+      </div>
+    </footer>
 <!-- Footer -->
-
   </div>
 </template>
 

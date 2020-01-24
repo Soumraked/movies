@@ -2,20 +2,6 @@
   <div class="container">
     <br>
     <div v-if="mostrar">
-      <!--
-      <b-card :img-src="movie2.poster" img-alt="Card image" img-left class="mb-3" img-height="400">
-        <b-card-text>
-          <h2>{{movie.title}} ({{movie2.date}})</h2><hr>
-          <p> {{movie.overview}} </p><hr>
-          <genres v-bind:genres="genres" /> <hr>
-          <h3><b-icon icon="star-fill" variant="warning">
-            </b-icon>{{" " + movie.vote_average}}<h6>Votos: {{movie.vote_count}}</h6>
-          </h3> 
-          <a :href="movie.homepage">Página oficial de la película</a>
-        </b-card-text>
-      </b-card>
-      -->
-
       <b-card no-body class="mb-3">
         <b-row no-gutters>
           <b-col md="3">

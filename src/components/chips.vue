@@ -4,9 +4,7 @@
       <div class="col-sm-auto" v-for="(g,i) in genres" :key="i">
         <h5><b-badge pill variant="info">{{g}}</b-badge></h5>
       </div>
-
-    </div>
-    
+    </div>   
   </div>
 </template>
 
@@ -16,14 +14,11 @@ export default {
   name: 'genres',
   data(){
     return{
-
     }
   },
   created() {
-    
   },
   methods: {
-    
   },
 }
 </script>
