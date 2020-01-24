@@ -59,6 +59,7 @@ export default {
       }
       this.movies = movies;
       console.log('hola');
+      console.log('chao');
       
     },
   }
