@@ -15,7 +15,7 @@ import axios from "axios";
 import Card from "@/components/card.vue"
 
 export default {
-  name: 'genres_list',
+  name: 'populares',
   components: {Card},
   data() {
     return {
@@ -58,6 +58,7 @@ export default {
         movies.push(info);
       }
       this.movies = movies;
+      console.log('hola');
       
     },
   }
